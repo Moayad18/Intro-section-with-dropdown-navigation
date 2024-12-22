@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cairo:wght@200..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kumbh+Sans:wght@100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
+:root {
+  --almost-White: hsl(0, 0%, 98%);
+  --medium-Gray: hsl(0, 0%, 41%);
+  --almost-Black: hsl(0, 0%, 8%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Epilogue";
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--almost-White);
+}
+
+main {
+  padding: 20px 40px;
+}
+
+main header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+main header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 60px;
+  gap: 30px;
+}
+main header nav ul.main {
+  padding: 0;
+}
+main header nav ul.main.company,
+main header nav ul.main.features {
+  position: relative;
+}
+main header nav ul.main,
+main header .login .log,
+main header .login .register {
+  cursor: pointer;
+  color: var(--medium-Gray);
+  font-weight: 700;
+  user-select: none;
+}
+main header nav ul.main:hover,
+main header .login .log:hover,
+main header .login .register:hover {
+  color: var(--almost-Black);
+}
+
+main header nav ul.secondary {
+  background-color: White;
+  border-radius: 12px;
+  padding: 15px;
+  position: absolute;
+  top: 60px;
+  box-shadow: 0px 0px 10px 0px hsl(0deg 0% 59% / 35%);
+  color: var(--medium-Gray);
+  display: none;
+}
+main header nav ul.secondary.features {
+  left: 140px;
+}
+main header nav ul.secondary.company {
+  left: 320px;
+}
+main header nav .feat.show ul.secondary.features,
+main header nav .comp.show ul.secondary.company {
+  display: block;
+}
+
+main header nav ul.secondary li {
+  padding: 5px;
+  list-style-type: none;
+  font-weight: normal;
+  cursor: default;
+}
+main header nav ul.secondary li img {
+  margin-right: 10px;
+}
+main header nav .feat.show ul.main .arrow-up,
+main header nav .comp.show ul.main .arrow-up {
+  display: inline-block;
+}
+main header nav .feat.show ul.main .arrow-down,
+main header nav .comp.show ul.main .arrow-down {
+  display: none;
+}
+
+main header nav ul.main .arrow-down {
+  display: inline-block;
+}
+main header nav ul.main .arrow-up {
+  display: none;
+}
+
+main header .login {
+  display: flex;
+  align-items: center;
+}
+main header .login .log {
+  margin-right: 30px;
+  display: block;
+}
+main header .login .register {
+  border: 2px solid var(--medium-Gray);
+  padding: 10px 15px;
+  border-radius: 12px;
+  display: block;
+}
+
+main .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+main section {
+  margin: 50px 0 0 150px;
+}
+main section h1 {
+  font-size: 73px;
+}
+main section p {
+  color: var(--medium-Gray);
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: 19px;
+}
+main section span {
+  display: block;
+  padding: 12.5px 20px;
+  background-color: var(--almost-Black);
+  border: 1px solid var(--almost-Black);
+  border-radius: 12px;
+  width: fit-content;
+  color: var(--almost-White);
+  margin: 50px 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+main section span:hover {
+  background-color: var(--almost-White);
+  color: var(--almost-Black);
+}
+main section .clinet img {
+  margin: 20px 25px 0 0;
+}
+
+main picture img {
+  width: 450px;
+  display: block;
+  margin: 0 auto;
+}
+header .menu,
+header .close-menu {
+  display: none;
+  z-index: 50;
+}
+@media (width<=450px) {
+  main {
+    padding: 30px 20px;
+  }
+  main header {
+    justify-items: end;
+    position: relative;
+  }
+  main header nav {
+    display: block;
+    position: absolute;
+    background-color: white;
+    top: -30px;
+    right: -20px;
+    margin: 0;
+    width: 70%;
+    padding: 80px 30px;
+    height: 100vh;
+    display: none;
+  }
+  main header nav .nav {
+    flex-direction: column;
+  }
+  main header nav .login {
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+  }
+  main header nav .log {
+    width: 100%;
+    margin: 20px auto;
+  }
+  main header .login .register {
+  }
+
+  main header nav ul.secondary {
+    position: unset;
+  }
+  main header .menu {
+    display: block;
+  }
+  main .container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "section";
+  }
+  main section {
+    margin: 0 auto;
+    grid-area: section;
+  }
+  main section h1 {
+    font-size: 35px;
+  }
+  main section p {
+    text-align: center;
+    font-size: 16px;
+  }
+  main section span {
+    margin: 30px auto;
+  }
+  main .container .image {
+    grid-area: image;
+  }
+  main .container picture img {
+    max-width: 100%;
+    margin-top: 25px;
+  }
+  main section .clinet {
+    margin: 50px 0 0;
+  }
+  main section .clinet img {
+    width: 80px;
+    margin: 0 4px 0 0;
+  }
+}
